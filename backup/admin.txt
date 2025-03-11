@@ -1,0 +1,101 @@
+admin.py:
+from sqladmin import Admin, ModelView
+from database import engine,SessionLocal
+from models import User
+from sqladmin.authentication import AuthenticationBackend
+from starlette.requests import Request
+from passlib.context import CryptContext
+from models import Movie
+from models import Review
+from logger import logger
+from models import Category
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+
+hashed_password = pwd_context.hash("$2b$12$yourgeneratedhashedpassword")  # Replace with your password
+print(hashed_password)
+
+class AdminAuth(AuthenticationBackend):
+    async def login(self, request: Request)-> bool:
+        form = await request.form()
+        username = form.get("username")
+        password = form.get("password")
+        db_session = SessionLocal()
+        user = db_session.query(User).filter(User.username==username).first()
+        print(f"User found: {user}")
+        
+        if user and pwd_context.verify(password, user.hashed_password):
+            if user.is_admin:
+                logger.info(f"Admin login successful: {username}")
+                request.session.update({"token":user.username})
+                return True
+            else:
+                logger.warning(f"Unauthorized login attempt by non-admin: {username}")
+                return False
+        else:
+            logger.warning(f"Failed login attempt: {username}")
+            return False
+            
+    async def logout(self, request: Request)-> bool:
+        request.session.clear()
+        return True
+    
+    async def authenticate(self, request: Request)-> bool:
+        token = request.session.get("token")
+        return token is not None
+    
+class Usersadmin(ModelView, model=User):
+    column_list = ['id','username','is_admin','movies','reviews']
+    
+    column_formatters = {
+        "movies": lambda m, c, u: ", ".join([movie.title for movie in u.movies]) if u.movies else "No Movies",
+        "reviews": lambda m, c, u: ", ".join([review.comment for review in u.reviews]) if u.reviews else "No Reviews"
+    }
+    async def format_column_data(self, obj, column):
+        if column == "movies":
+            return ", ".join(
+                [f"{movie.title} ({movie.category.name if movie.category else 'No Category'})" for movie in obj.movies]
+            )
+        # def format_column(self, obj, name):
+        if column == "movies":
+                return ", ".join([movie.title for movie in obj.movies]) if obj.movies else "No Movies"
+        elif column == "reviews":
+            return ", ".join([review.comment for review in obj.reviews]) if obj.reviews else "No Reviews"
+        return getattr(obj, column)
+
+class MovieAdmin(ModelView, model=Movie):
+    column_list = [Movie.id, Movie.title, Movie.genre,Movie.category]
+    column_searchable_list = [Movie.title]
+    column_formatters = {
+        "category": lambda m, c, movie: movie.category.name if movie.category else "No Category"
+    }
+    def format_column(self, obj, name):
+        if name == "category":
+            return obj.category.name if obj.category else "No Category"
+        return getattr(obj, name)
+    
+
+class ReviewsAdmin(ModelView, model=Review):
+    column_list = [Review.id, Review.movie_id, Review.user_id, Review.comment, Review.rating]
+    name = "Review"
+    name_plural = "Reviews"
+    icon = "fa-solid fa-star"
+    column_formatters = {
+        "movie": lambda m, c, review: review.movie.title if review.movie else "No Movie",
+        "user": lambda m, c, review: review.user.username if review.user else "No User"
+    }
+
+class CategoryAdmin(ModelView, model=Category):
+    column_list = ['id', 'name']
+    name = "Category"
+    name_plural = "Categories"
+    icon = "fas fa-tags"
+
+
+def create_admin(app):
+    authentication_backend = AdminAuth(secret_key="supersecretkey")
+    admin = Admin(app=app, engine=engine, authentication_backend=authentication_backend)
+    admin.add_view(Usersadmin)
+    admin.add_view(MovieAdmin)
+    admin.add_view(ReviewsAdmin)
+    admin.add_view(CategoryAdmin)
+    return admin

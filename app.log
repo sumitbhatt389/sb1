@@ -1,0 +1,526 @@
+2025-03-11 13:55:12,630 - INFO - BEGIN (implicit)
+2025-03-11 13:55:12,631 - INFO - PRAGMA main.table_info("users")
+2025-03-11 13:55:12,632 - INFO - [raw sql] ()
+2025-03-11 13:55:12,633 - INFO - PRAGMA main.table_info("categories")
+2025-03-11 13:55:12,634 - INFO - [raw sql] ()
+2025-03-11 13:55:12,635 - INFO - PRAGMA temp.table_info("categories")
+2025-03-11 13:55:12,636 - INFO - [raw sql] ()
+2025-03-11 13:55:12,638 - INFO - PRAGMA main.table_info("movies")
+2025-03-11 13:55:12,639 - INFO - [raw sql] ()
+2025-03-11 13:55:12,640 - INFO - PRAGMA main.table_info("reviews")
+2025-03-11 13:55:12,641 - INFO - [raw sql] ()
+2025-03-11 13:55:12,643 - INFO - 
+CREATE TABLE categories (
+	id INTEGER NOT NULL, 
+	name VARCHAR NOT NULL, 
+	PRIMARY KEY (id)
+)
+
+
+2025-03-11 13:55:12,645 - INFO - [no key 0.00194s] ()
+2025-03-11 13:55:12,650 - INFO - CREATE INDEX ix_categories_id ON categories (id)
+2025-03-11 13:55:12,651 - INFO - [no key 0.00117s] ()
+2025-03-11 13:55:12,655 - INFO - CREATE INDEX ix_categories_name ON categories (name)
+2025-03-11 13:55:12,656 - INFO - [no key 0.00125s] ()
+2025-03-11 13:55:12,660 - INFO - COMMIT
+2025-03-11 13:57:05,437 - INFO - BEGIN (implicit)
+2025-03-11 13:57:05,439 - INFO - PRAGMA main.table_info("users")
+2025-03-11 13:57:05,440 - INFO - [raw sql] ()
+2025-03-11 13:57:05,442 - INFO - PRAGMA main.table_info("categories")
+2025-03-11 13:57:05,443 - INFO - [raw sql] ()
+2025-03-11 13:57:05,444 - INFO - PRAGMA main.table_info("movies")
+2025-03-11 13:57:05,445 - INFO - [raw sql] ()
+2025-03-11 13:57:05,446 - INFO - PRAGMA main.table_info("reviews")
+2025-03-11 13:57:05,448 - INFO - [raw sql] ()
+2025-03-11 13:57:05,449 - INFO - COMMIT
+2025-03-11 13:57:34,513 - INFO - BEGIN (implicit)
+2025-03-11 13:57:34,514 - INFO - PRAGMA main.table_info("users")
+2025-03-11 13:57:34,515 - INFO - [raw sql] ()
+2025-03-11 13:57:34,517 - INFO - PRAGMA main.table_info("categories")
+2025-03-11 13:57:34,518 - INFO - [raw sql] ()
+2025-03-11 13:57:34,520 - INFO - PRAGMA main.table_info("movies")
+2025-03-11 13:57:34,521 - INFO - [raw sql] ()
+2025-03-11 13:57:34,522 - INFO - PRAGMA main.table_info("reviews")
+2025-03-11 13:57:34,523 - INFO - [raw sql] ()
+2025-03-11 13:57:34,525 - INFO - COMMIT
+2025-03-11 13:57:38,257 - INFO - BEGIN (implicit)
+2025-03-11 13:57:38,258 - INFO - PRAGMA main.table_info("users")
+2025-03-11 13:57:38,259 - INFO - [raw sql] ()
+2025-03-11 13:57:38,261 - INFO - PRAGMA main.table_info("categories")
+2025-03-11 13:57:38,262 - INFO - [raw sql] ()
+2025-03-11 13:57:38,264 - INFO - PRAGMA main.table_info("movies")
+2025-03-11 13:57:38,265 - INFO - [raw sql] ()
+2025-03-11 13:57:38,266 - INFO - PRAGMA main.table_info("reviews")
+2025-03-11 13:57:38,267 - INFO - [raw sql] ()
+2025-03-11 13:57:38,268 - INFO - COMMIT
+2025-03-11 13:58:54,311 - INFO - BEGIN (implicit)
+2025-03-11 13:58:54,312 - INFO - PRAGMA main.table_info("users")
+2025-03-11 13:58:54,313 - INFO - [raw sql] ()
+2025-03-11 13:58:54,314 - INFO - PRAGMA main.table_info("categories")
+2025-03-11 13:58:54,315 - INFO - [raw sql] ()
+2025-03-11 13:58:54,316 - INFO - PRAGMA main.table_info("movies")
+2025-03-11 13:58:54,316 - INFO - [raw sql] ()
+2025-03-11 13:58:54,317 - INFO - PRAGMA main.table_info("reviews")
+2025-03-11 13:58:54,318 - INFO - [raw sql] ()
+2025-03-11 13:58:54,319 - INFO - COMMIT
+2025-03-11 13:59:25,765 - ERROR - Unhandled Exception: (sqlite3.OperationalError) no such column: users.is_admin
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.hashed_password AS users_hashed_password, users.is_admin AS users_is_admin 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('sumit', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-03-11 14:02:02,363 - INFO - BEGIN (implicit)
+2025-03-11 14:02:02,364 - INFO - PRAGMA main.table_info("users")
+2025-03-11 14:02:02,364 - INFO - [raw sql] ()
+2025-03-11 14:02:02,365 - INFO - PRAGMA main.table_info("categories")
+2025-03-11 14:02:02,366 - INFO - [raw sql] ()
+2025-03-11 14:02:02,367 - INFO - PRAGMA main.table_info("movies")
+2025-03-11 14:02:02,368 - INFO - [raw sql] ()
+2025-03-11 14:02:02,368 - INFO - PRAGMA main.table_info("reviews")
+2025-03-11 14:02:02,369 - INFO - [raw sql] ()
+2025-03-11 14:02:02,370 - INFO - COMMIT
+2025-03-11 14:02:17,572 - INFO - BEGIN (implicit)
+2025-03-11 14:02:17,573 - INFO - PRAGMA main.table_info("users")
+2025-03-11 14:02:17,574 - INFO - [raw sql] ()
+2025-03-11 14:02:17,576 - INFO - PRAGMA main.table_info("categories")
+2025-03-11 14:02:17,576 - INFO - [raw sql] ()
+2025-03-11 14:02:17,577 - INFO - PRAGMA main.table_info("movies")
+2025-03-11 14:02:17,578 - INFO - [raw sql] ()
+2025-03-11 14:02:17,578 - INFO - PRAGMA main.table_info("reviews")
+2025-03-11 14:02:17,579 - INFO - [raw sql] ()
+2025-03-11 14:02:17,580 - INFO - COMMIT
+2025-03-11 14:28:53,740 - INFO - BEGIN (implicit)
+2025-03-11 14:28:53,742 - INFO - PRAGMA main.table_info("users")
+2025-03-11 14:28:53,743 - INFO - [raw sql] ()
+2025-03-11 14:28:53,744 - INFO - PRAGMA main.table_info("categories")
+2025-03-11 14:28:53,745 - INFO - [raw sql] ()
+2025-03-11 14:28:53,746 - INFO - PRAGMA main.table_info("movies")
+2025-03-11 14:28:53,747 - INFO - [raw sql] ()
+2025-03-11 14:28:53,748 - INFO - PRAGMA main.table_info("reviews")
+2025-03-11 14:28:53,749 - INFO - [raw sql] ()
+2025-03-11 14:28:53,750 - INFO - COMMIT
+2025-03-11 14:29:30,218 - INFO - BEGIN (implicit)
+2025-03-11 14:29:30,219 - INFO - PRAGMA main.table_info("users")
+2025-03-11 14:29:30,220 - INFO - [raw sql] ()
+2025-03-11 14:29:30,221 - INFO - PRAGMA main.table_info("categories")
+2025-03-11 14:29:30,221 - INFO - [raw sql] ()
+2025-03-11 14:29:30,222 - INFO - PRAGMA main.table_info("movies")
+2025-03-11 14:29:30,222 - INFO - [raw sql] ()
+2025-03-11 14:29:30,223 - INFO - PRAGMA main.table_info("reviews")
+2025-03-11 14:29:30,223 - INFO - [raw sql] ()
+2025-03-11 14:29:30,224 - INFO - COMMIT
+2025-03-11 14:30:00,541 - ERROR - Unhandled Exception: (sqlite3.OperationalError) no such column: users.is_admin
+[SQL: SELECT users.id AS users_id, users.username AS users_username, users.hashed_password AS users_hashed_password, users.is_admin AS users_is_admin 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?]
+[parameters: ('sumit', 1, 0)]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-03-11 14:30:44,494 - INFO - BEGIN (implicit)
+2025-03-11 14:30:44,495 - INFO - PRAGMA main.table_info("users")
+2025-03-11 14:30:44,496 - INFO - [raw sql] ()
+2025-03-11 14:30:44,497 - INFO - PRAGMA main.table_info("categories")
+2025-03-11 14:30:44,498 - INFO - [raw sql] ()
+2025-03-11 14:30:44,499 - INFO - PRAGMA main.table_info("movies")
+2025-03-11 14:30:44,499 - INFO - [raw sql] ()
+2025-03-11 14:30:44,500 - INFO - PRAGMA main.table_info("reviews")
+2025-03-11 14:30:44,501 - INFO - [raw sql] ()
+2025-03-11 14:30:44,502 - INFO - COMMIT
+2025-03-11 14:30:57,224 - INFO - BEGIN (implicit)
+2025-03-11 14:30:57,225 - INFO - PRAGMA main.table_info("users")
+2025-03-11 14:30:57,226 - INFO - [raw sql] ()
+2025-03-11 14:30:57,228 - INFO - PRAGMA main.table_info("categories")
+2025-03-11 14:30:57,229 - INFO - [raw sql] ()
+2025-03-11 14:30:57,230 - INFO - PRAGMA main.table_info("movies")
+2025-03-11 14:30:57,231 - INFO - [raw sql] ()
+2025-03-11 14:30:57,232 - INFO - PRAGMA main.table_info("reviews")
+2025-03-11 14:30:57,232 - INFO - [raw sql] ()
+2025-03-11 14:30:57,233 - INFO - COMMIT
+2025-03-11 14:35:57,532 - INFO - BEGIN (implicit)
+2025-03-11 14:35:57,534 - INFO - PRAGMA main.table_info("users")
+2025-03-11 14:35:57,535 - INFO - [raw sql] ()
+2025-03-11 14:35:57,536 - INFO - PRAGMA main.table_info("categories")
+2025-03-11 14:35:57,538 - INFO - [raw sql] ()
+2025-03-11 14:35:57,539 - INFO - PRAGMA main.table_info("movies")
+2025-03-11 14:35:57,540 - INFO - [raw sql] ()
+2025-03-11 14:35:57,541 - INFO - PRAGMA main.table_info("reviews")
+2025-03-11 14:35:57,542 - INFO - [raw sql] ()
+2025-03-11 14:35:57,544 - INFO - COMMIT
+2025-03-11 14:36:48,058 - INFO - BEGIN (implicit)
+2025-03-11 14:36:48,059 - INFO - PRAGMA main.table_info("users")
+2025-03-11 14:36:48,060 - INFO - [raw sql] ()
+2025-03-11 14:36:48,061 - INFO - PRAGMA main.table_info("categories")
+2025-03-11 14:36:48,062 - INFO - [raw sql] ()
+2025-03-11 14:36:48,063 - INFO - PRAGMA main.table_info("movies")
+2025-03-11 14:36:48,064 - INFO - [raw sql] ()
+2025-03-11 14:36:48,065 - INFO - PRAGMA main.table_info("reviews")
+2025-03-11 14:36:48,066 - INFO - [raw sql] ()
+2025-03-11 14:36:48,067 - INFO - COMMIT
+2025-03-11 14:37:41,049 - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\movie-rating-system\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-03-11 14:38:16,114 - INFO - BEGIN (implicit)
+2025-03-11 14:38:16,116 - INFO - SELECT users.id AS users_id, users.username AS users_username, users.hashed_password AS users_hashed_password, users.is_admin AS users_is_admin 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?
+2025-03-11 14:38:16,119 - INFO - [generated in 0.00266s] ('m4', 1, 0)
+2025-03-11 14:38:16,122 - INFO - Fetched 2 users.
+2025-03-11 14:38:16,123 - INFO - ROLLBACK
+2025-03-11 14:40:48,416 - INFO - BEGIN (implicit)
+2025-03-11 14:40:48,418 - INFO - SELECT users.id AS users_id, users.username AS users_username, users.hashed_password AS users_hashed_password, users.is_admin AS users_is_admin 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?
+2025-03-11 14:40:48,420 - INFO - [cached since 152.3s ago] ('m4', 1, 0)
+2025-03-11 14:40:48,425 - INFO - ROLLBACK
+2025-03-11 14:40:48,426 - ERROR - Unhandled Exception: (sqlite3.IntegrityError) UNIQUE constraint failed: movies.id
+[SQL: INSERT INTO movies (id, title, genre, year, user_id, category_id) VALUES (?, ?, ?, ?, ?, ?)]
+[parameters: (1, 'avengers', 'new', 2015, 2, None)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-03-11 14:44:28,305 - INFO - BEGIN (implicit)
+2025-03-11 14:44:28,306 - INFO - PRAGMA main.table_info("users")
+2025-03-11 14:44:28,307 - INFO - [raw sql] ()
+2025-03-11 14:44:28,308 - INFO - PRAGMA main.table_info("categories")
+2025-03-11 14:44:28,309 - INFO - [raw sql] ()
+2025-03-11 14:44:28,310 - INFO - PRAGMA main.table_info("movies")
+2025-03-11 14:44:28,311 - INFO - [raw sql] ()
+2025-03-11 14:44:28,311 - INFO - PRAGMA main.table_info("reviews")
+2025-03-11 14:44:28,312 - INFO - [raw sql] ()
+2025-03-11 14:44:28,313 - INFO - COMMIT
+2025-03-11 14:44:55,905 - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\movie-rating-system\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-03-11 14:45:14,270 - INFO - BEGIN (implicit)
+2025-03-11 14:45:14,272 - INFO - SELECT users.id AS users_id, users.username AS users_username, users.hashed_password AS users_hashed_password, users.is_admin AS users_is_admin 
+FROM users 
+WHERE users.username = ?
+ LIMIT ? OFFSET ?
+2025-03-11 14:45:14,274 - INFO - [generated in 0.00188s] ('sumit', 1, 0)
+2025-03-11 14:45:14,276 - INFO - Fetched 4 users.
+2025-03-11 14:45:14,278 - INFO - ROLLBACK
+2025-03-11 14:45:31,516 - INFO - BEGIN (implicit)
+2025-03-11 14:45:31,519 - INFO - SELECT count(movies.id) AS count_1 
+FROM movies
+2025-03-11 14:45:31,521 - INFO - [generated in 0.00157s] ()
+2025-03-11 14:45:31,523 - INFO - ROLLBACK
+2025-03-11 14:45:31,525 - INFO - BEGIN (implicit)
+2025-03-11 14:45:31,530 - INFO - SELECT movies.id, movies.title, movies.genre, movies.year, movies.user_id, movies.category_id 
+FROM movies ORDER BY movies.id ASC
+ LIMIT ? OFFSET ?
+2025-03-11 14:45:31,532 - INFO - [generated in 0.00185s] (10, 0)
+2025-03-11 14:45:31,535 - INFO - SELECT users.id AS users_id, users.username AS users_username, users.hashed_password AS users_hashed_password, users.is_admin AS users_is_admin 
+FROM users 
+WHERE users.id IN (?, ?)
+2025-03-11 14:45:31,537 - INFO - [generated in 0.00183s] (1, 2)
+2025-03-11 14:45:31,542 - INFO - SELECT categories.id AS categories_id, categories.name AS categories_name 
+FROM categories 
+WHERE categories.id IN (?, ?)
+2025-03-11 14:45:31,544 - INFO - [generated in 0.00204s] (1, 2)
+2025-03-11 14:45:31,547 - INFO - SELECT reviews.movie_id AS reviews_movie_id, reviews.id AS reviews_id, reviews.rating AS reviews_rating, reviews.comment AS reviews_comment, reviews.user_id AS reviews_user_id 
+FROM reviews 
+WHERE reviews.movie_id IN (?, ?)
+2025-03-11 14:45:31,549 - INFO - [generated in 0.00210s] (1, 2)
+2025-03-11 14:45:31,551 - INFO - ROLLBACK
+2025-03-11 14:45:36,135 - INFO - BEGIN (implicit)
+2025-03-11 14:45:36,138 - INFO - SELECT count(users.id) AS count_1 
+FROM users
+2025-03-11 14:45:36,139 - INFO - [generated in 0.00179s] ()
+2025-03-11 14:45:36,141 - INFO - ROLLBACK
+2025-03-11 14:45:36,143 - INFO - BEGIN (implicit)
+2025-03-11 14:45:36,146 - INFO - SELECT users.id, users.username, users.hashed_password, users.is_admin 
+FROM users ORDER BY users.id ASC
+ LIMIT ? OFFSET ?
+2025-03-11 14:45:36,148 - INFO - [generated in 0.00202s] (10, 0)
+2025-03-11 14:45:36,149 - INFO - ROLLBACK
+2025-03-11 14:47:25,267 - INFO - BEGIN (implicit)
+2025-03-11 14:47:25,269 - INFO - SELECT count(reviews.id) AS count_1 
+FROM reviews
+2025-03-11 14:47:25,271 - INFO - [generated in 0.00217s] ()
+2025-03-11 14:47:25,273 - INFO - ROLLBACK
+2025-03-11 14:47:25,276 - INFO - BEGIN (implicit)
+2025-03-11 14:47:25,280 - INFO - SELECT reviews.id, reviews.rating, reviews.comment, reviews.movie_id, reviews.user_id 
+FROM reviews ORDER BY reviews.id ASC
+ LIMIT ? OFFSET ?
+2025-03-11 14:47:25,281 - INFO - [generated in 0.00200s] (10, 0)
+2025-03-11 14:47:25,286 - INFO - SELECT users.id AS users_id, users.username AS users_username, users.hashed_password AS users_hashed_password, users.is_admin AS users_is_admin 
+FROM users 
+WHERE users.id IN (?, ?)
+2025-03-11 14:47:25,288 - INFO - [generated in 0.00277s] (1, 2)
+2025-03-11 14:47:25,291 - INFO - SELECT movies.id AS movies_id, movies.title AS movies_title, movies.genre AS movies_genre, movies.year AS movies_year, movies.user_id AS movies_user_id, movies.category_id AS movies_category_id 
+FROM movies 
+WHERE movies.id IN (?, ?)
+2025-03-11 14:47:25,294 - INFO - [generated in 0.00300s] (1, 2)
+2025-03-11 14:47:25,296 - INFO - ROLLBACK
+2025-03-11 14:47:30,159 - INFO - BEGIN (implicit)
+2025-03-11 14:47:30,161 - INFO - SELECT users.id, users.username, users.hashed_password, users.is_admin 
+FROM users 
+WHERE users.id = ?
+2025-03-11 14:47:30,162 - INFO - [generated in 0.00154s] (1,)
+2025-03-11 14:47:30,165 - INFO - SELECT movies.user_id AS movies_user_id, movies.id AS movies_id, movies.title AS movies_title, movies.genre AS movies_genre, movies.year AS movies_year, movies.category_id AS movies_category_id 
+FROM movies 
+WHERE movies.user_id IN (?)
+2025-03-11 14:47:30,167 - INFO - [generated in 0.00273s] (1,)
+2025-03-11 14:47:30,172 - INFO - SELECT reviews.user_id AS reviews_user_id, reviews.id AS reviews_id, reviews.rating AS reviews_rating, reviews.comment AS reviews_comment, reviews.movie_id AS reviews_movie_id 
+FROM reviews 
+WHERE reviews.user_id IN (?)
+2025-03-11 14:47:30,174 - INFO - [generated in 0.00212s] (1,)
+2025-03-11 14:47:30,175 - INFO - ROLLBACK
+2025-03-11 14:47:32,280 - INFO - BEGIN (implicit)
+2025-03-11 14:47:32,283 - INFO - SELECT movies.id, movies.title, movies.genre, movies.year, movies.user_id, movies.category_id 
+FROM movies 
+WHERE movies.id = ?
+2025-03-11 14:47:32,286 - INFO - [generated in 0.00311s] (1,)
+2025-03-11 14:47:32,290 - INFO - SELECT users.id AS users_id, users.username AS users_username, users.hashed_password AS users_hashed_password, users.is_admin AS users_is_admin 
+FROM users 
+WHERE users.id IN (?)
+2025-03-11 14:47:32,294 - INFO - [generated in 0.00312s] (1,)
+2025-03-11 14:47:32,298 - INFO - SELECT categories.id AS categories_id, categories.name AS categories_name 
+FROM categories 
+WHERE categories.id IN (?)
+2025-03-11 14:47:32,301 - INFO - [generated in 0.00316s] (1,)
+2025-03-11 14:47:32,304 - INFO - SELECT reviews.movie_id AS reviews_movie_id, reviews.id AS reviews_id, reviews.rating AS reviews_rating, reviews.comment AS reviews_comment, reviews.user_id AS reviews_user_id 
+FROM reviews 
+WHERE reviews.movie_id IN (?)
+2025-03-11 14:47:32,306 - INFO - [generated in 0.00265s] (1,)
+2025-03-11 14:47:32,308 - INFO - ROLLBACK
+2025-03-11 14:47:35,387 - INFO - BEGIN (implicit)
+2025-03-11 14:47:35,388 - INFO - SELECT count(movies.id) AS count_1 
+FROM movies
+2025-03-11 14:47:35,389 - INFO - [cached since 123.9s ago] ()
+2025-03-11 14:47:35,390 - INFO - ROLLBACK
+2025-03-11 14:47:35,392 - INFO - BEGIN (implicit)
+2025-03-11 14:47:35,393 - INFO - SELECT movies.id, movies.title, movies.genre, movies.year, movies.user_id, movies.category_id 
+FROM movies ORDER BY movies.id ASC
+ LIMIT ? OFFSET ?
+2025-03-11 14:47:35,395 - INFO - [cached since 123.9s ago] (10, 0)
+2025-03-11 14:47:35,400 - INFO - SELECT users.id AS users_id, users.username AS users_username, users.hashed_password AS users_hashed_password, users.is_admin AS users_is_admin 
+FROM users 
+WHERE users.id IN (?, ?)
+2025-03-11 14:47:35,402 - INFO - [cached since 123.9s ago] (1, 2)
+2025-03-11 14:47:35,404 - INFO - SELECT categories.id AS categories_id, categories.name AS categories_name 
+FROM categories 
+WHERE categories.id IN (?, ?)
+2025-03-11 14:47:35,405 - INFO - [cached since 123.9s ago] (1, 2)
+2025-03-11 14:47:35,407 - INFO - SELECT reviews.movie_id AS reviews_movie_id, reviews.id AS reviews_id, reviews.rating AS reviews_rating, reviews.comment AS reviews_comment, reviews.user_id AS reviews_user_id 
+FROM reviews 
+WHERE reviews.movie_id IN (?, ?)
+2025-03-11 14:47:35,409 - INFO - [cached since 123.9s ago] (1, 2)
+2025-03-11 14:47:35,410 - INFO - ROLLBACK
+2025-03-11 14:48:39,599 - INFO - BEGIN (implicit)
+2025-03-11 14:48:39,600 - INFO - SELECT movies.id, movies.title, movies.genre, movies.year, movies.user_id, movies.category_id 
+FROM movies 
+WHERE movies.id = ?
+2025-03-11 14:48:39,601 - INFO - [cached since 67.32s ago] (1,)
+2025-03-11 14:48:39,604 - INFO - SELECT users.id AS users_id, users.username AS users_username, users.hashed_password AS users_hashed_password, users.is_admin AS users_is_admin 
+FROM users 
+WHERE users.id IN (?)
+2025-03-11 14:48:39,606 - INFO - [cached since 67.32s ago] (1,)
+2025-03-11 14:48:39,611 - INFO - SELECT categories.id AS categories_id, categories.name AS categories_name 
+FROM categories 
+WHERE categories.id IN (?)
+2025-03-11 14:48:39,612 - INFO - [cached since 67.31s ago] (1,)
+2025-03-11 14:48:39,614 - INFO - SELECT reviews.movie_id AS reviews_movie_id, reviews.id AS reviews_id, reviews.rating AS reviews_rating, reviews.comment AS reviews_comment, reviews.user_id AS reviews_user_id 
+FROM reviews 
+WHERE reviews.movie_id IN (?)
+2025-03-11 14:48:39,616 - INFO - [cached since 67.31s ago] (1,)
+2025-03-11 14:48:39,618 - INFO - ROLLBACK
+2025-03-11 14:54:51,302 - INFO - BEGIN (implicit)
+2025-03-11 14:54:51,304 - INFO - PRAGMA main.table_info("users")
+2025-03-11 14:54:51,305 - INFO - [raw sql] ()
+2025-03-11 14:54:51,306 - INFO - PRAGMA main.table_info("categories")
+2025-03-11 14:54:51,307 - INFO - [raw sql] ()
+2025-03-11 14:54:51,308 - INFO - PRAGMA main.table_info("movies")
+2025-03-11 14:54:51,309 - INFO - [raw sql] ()
+2025-03-11 14:54:51,310 - INFO - PRAGMA main.table_info("reviews")
+2025-03-11 14:54:51,311 - INFO - [raw sql] ()
+2025-03-11 14:54:51,312 - INFO - COMMIT
+2025-03-11 14:54:55,905 - INFO - BEGIN (implicit)
+2025-03-11 14:54:55,906 - INFO - PRAGMA main.table_info("users")
+2025-03-11 14:54:55,907 - INFO - [raw sql] ()
+2025-03-11 14:54:55,909 - INFO - PRAGMA main.table_info("categories")
+2025-03-11 14:54:55,909 - INFO - [raw sql] ()
+2025-03-11 14:54:55,910 - INFO - PRAGMA main.table_info("movies")
+2025-03-11 14:54:55,911 - INFO - [raw sql] ()
+2025-03-11 14:54:55,912 - INFO - PRAGMA main.table_info("reviews")
+2025-03-11 14:54:55,913 - INFO - [raw sql] ()
+2025-03-11 14:54:55,915 - INFO - COMMIT
+2025-03-11 14:55:00,637 - INFO - BEGIN (implicit)
+2025-03-11 14:55:00,638 - INFO - PRAGMA main.table_info("users")
+2025-03-11 14:55:00,639 - INFO - [raw sql] ()
+2025-03-11 14:55:00,640 - INFO - PRAGMA main.table_info("categories")
+2025-03-11 14:55:00,641 - INFO - [raw sql] ()
+2025-03-11 14:55:00,641 - INFO - PRAGMA main.table_info("movies")
+2025-03-11 14:55:00,642 - INFO - [raw sql] ()
+2025-03-11 14:55:00,642 - INFO - PRAGMA main.table_info("reviews")
+2025-03-11 14:55:00,643 - INFO - [raw sql] ()
+2025-03-11 14:55:00,644 - INFO - COMMIT
+2025-03-11 14:55:27,437 - INFO - BEGIN (implicit)
+2025-03-11 14:55:27,439 - INFO - PRAGMA main.table_info("users")
+2025-03-11 14:55:27,440 - INFO - [raw sql] ()
+2025-03-11 14:55:27,442 - INFO - PRAGMA main.table_info("categories")
+2025-03-11 14:55:27,442 - INFO - [raw sql] ()
+2025-03-11 14:55:27,443 - INFO - PRAGMA main.table_info("movies")
+2025-03-11 14:55:27,444 - INFO - [raw sql] ()
+2025-03-11 14:55:27,445 - INFO - PRAGMA main.table_info("reviews")
+2025-03-11 14:55:27,446 - INFO - [raw sql] ()
+2025-03-11 14:55:27,447 - INFO - COMMIT
+2025-03-11 14:59:43,764 - INFO - BEGIN (implicit)
+2025-03-11 14:59:43,765 - INFO - PRAGMA main.table_info("users")
+2025-03-11 14:59:43,766 - INFO - [raw sql] ()
+2025-03-11 14:59:43,768 - INFO - PRAGMA main.table_info("categories")
+2025-03-11 14:59:43,769 - INFO - [raw sql] ()
+2025-03-11 14:59:43,770 - INFO - PRAGMA main.table_info("movies")
+2025-03-11 14:59:43,771 - INFO - [raw sql] ()
+2025-03-11 14:59:43,772 - INFO - PRAGMA main.table_info("reviews")
+2025-03-11 14:59:43,773 - INFO - [raw sql] ()
+2025-03-11 14:59:43,775 - INFO - COMMIT
+2025-03-11 15:00:36,776 - INFO - BEGIN (implicit)
+2025-03-11 15:00:36,777 - INFO - PRAGMA main.table_info("users")
+2025-03-11 15:00:36,778 - INFO - [raw sql] ()
+2025-03-11 15:00:36,779 - INFO - PRAGMA main.table_info("categories")
+2025-03-11 15:00:36,780 - INFO - [raw sql] ()
+2025-03-11 15:00:36,781 - INFO - PRAGMA main.table_info("movies")
+2025-03-11 15:00:36,782 - INFO - [raw sql] ()
+2025-03-11 15:00:36,783 - INFO - PRAGMA main.table_info("reviews")
+2025-03-11 15:00:36,784 - INFO - [raw sql] ()
+2025-03-11 15:00:36,785 - INFO - COMMIT
+2025-03-11 15:00:38,509 - INFO - BEGIN (implicit)
+2025-03-11 15:00:38,510 - INFO - PRAGMA main.table_info("users")
+2025-03-11 15:00:38,511 - INFO - [raw sql] ()
+2025-03-11 15:00:38,512 - INFO - PRAGMA main.table_info("categories")
+2025-03-11 15:00:38,513 - INFO - [raw sql] ()
+2025-03-11 15:00:38,515 - INFO - PRAGMA main.table_info("movies")
+2025-03-11 15:00:38,516 - INFO - [raw sql] ()
+2025-03-11 15:00:38,517 - INFO - PRAGMA main.table_info("reviews")
+2025-03-11 15:00:38,518 - INFO - [raw sql] ()
+2025-03-11 15:00:38,519 - INFO - COMMIT
+2025-03-11 15:00:40,378 - INFO - BEGIN (implicit)
+2025-03-11 15:00:40,379 - INFO - PRAGMA main.table_info("users")
+2025-03-11 15:00:40,381 - INFO - [raw sql] ()
+2025-03-11 15:00:40,383 - INFO - PRAGMA main.table_info("categories")
+2025-03-11 15:00:40,384 - INFO - [raw sql] ()
+2025-03-11 15:00:40,385 - INFO - PRAGMA main.table_info("movies")
+2025-03-11 15:00:40,385 - INFO - [raw sql] ()
+2025-03-11 15:00:40,386 - INFO - PRAGMA main.table_info("reviews")
+2025-03-11 15:00:40,387 - INFO - [raw sql] ()
+2025-03-11 15:00:40,388 - INFO - COMMIT
+2025-03-11 15:00:48,802 - INFO - BEGIN (implicit)
+2025-03-11 15:00:48,803 - INFO - PRAGMA main.table_info("users")
+2025-03-11 15:00:48,803 - INFO - [raw sql] ()
+2025-03-11 15:00:48,805 - INFO - PRAGMA main.table_info("categories")
+2025-03-11 15:00:48,805 - INFO - [raw sql] ()
+2025-03-11 15:00:48,806 - INFO - PRAGMA main.table_info("movies")
+2025-03-11 15:00:48,807 - INFO - [raw sql] ()
+2025-03-11 15:00:48,808 - INFO - PRAGMA main.table_info("reviews")
+2025-03-11 15:00:48,809 - INFO - [raw sql] ()
+2025-03-11 15:00:48,810 - INFO - COMMIT
+2025-03-11 15:00:55,565 - INFO - BEGIN (implicit)
+2025-03-11 15:00:55,566 - INFO - PRAGMA main.table_info("users")
+2025-03-11 15:00:55,567 - INFO - [raw sql] ()
+2025-03-11 15:00:55,569 - INFO - PRAGMA main.table_info("categories")
+2025-03-11 15:00:55,570 - INFO - [raw sql] ()
+2025-03-11 15:00:55,571 - INFO - PRAGMA main.table_info("movies")
+2025-03-11 15:00:55,572 - INFO - [raw sql] ()
+2025-03-11 15:00:55,573 - INFO - PRAGMA main.table_info("reviews")
+2025-03-11 15:00:55,573 - INFO - [raw sql] ()
+2025-03-11 15:00:55,574 - INFO - COMMIT
+2025-03-11 15:01:31,471 - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\movie-rating-system\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'
+2025-03-11 15:05:11,330 - INFO - BEGIN (implicit)
+2025-03-11 15:05:11,331 - INFO - PRAGMA main.table_info("users")
+2025-03-11 15:05:11,332 - INFO - [raw sql] ()
+2025-03-11 15:05:11,334 - INFO - PRAGMA main.table_info("categories")
+2025-03-11 15:05:11,334 - INFO - [raw sql] ()
+2025-03-11 15:05:11,335 - INFO - PRAGMA main.table_info("movies")
+2025-03-11 15:05:11,336 - INFO - [raw sql] ()
+2025-03-11 15:05:11,337 - INFO - PRAGMA main.table_info("reviews")
+2025-03-11 15:05:11,338 - INFO - [raw sql] ()
+2025-03-11 15:05:11,339 - INFO - COMMIT
+2025-03-11 15:05:13,045 - INFO - BEGIN (implicit)
+2025-03-11 15:05:13,046 - INFO - PRAGMA main.table_info("users")
+2025-03-11 15:05:13,047 - INFO - [raw sql] ()
+2025-03-11 15:05:13,049 - INFO - PRAGMA main.table_info("categories")
+2025-03-11 15:05:13,050 - INFO - [raw sql] ()
+2025-03-11 15:05:13,050 - INFO - PRAGMA main.table_info("movies")
+2025-03-11 15:05:13,051 - INFO - [raw sql] ()
+2025-03-11 15:05:13,052 - INFO - PRAGMA main.table_info("reviews")
+2025-03-11 15:05:13,052 - INFO - [raw sql] ()
+2025-03-11 15:05:13,053 - INFO - COMMIT
+2025-03-11 15:05:14,655 - INFO - BEGIN (implicit)
+2025-03-11 15:05:14,656 - INFO - PRAGMA main.table_info("users")
+2025-03-11 15:05:14,657 - INFO - [raw sql] ()
+2025-03-11 15:05:14,658 - INFO - PRAGMA main.table_info("categories")
+2025-03-11 15:05:14,659 - INFO - [raw sql] ()
+2025-03-11 15:05:14,659 - INFO - PRAGMA main.table_info("movies")
+2025-03-11 15:05:14,660 - INFO - [raw sql] ()
+2025-03-11 15:05:14,661 - INFO - PRAGMA main.table_info("reviews")
+2025-03-11 15:05:14,661 - INFO - [raw sql] ()
+2025-03-11 15:05:14,662 - INFO - COMMIT
+2025-03-11 15:05:29,826 - INFO - BEGIN (implicit)
+2025-03-11 15:05:29,827 - INFO - PRAGMA main.table_info("users")
+2025-03-11 15:05:29,827 - INFO - [raw sql] ()
+2025-03-11 15:05:29,829 - INFO - PRAGMA main.table_info("categories")
+2025-03-11 15:05:29,830 - INFO - [raw sql] ()
+2025-03-11 15:05:29,831 - INFO - PRAGMA main.table_info("movies")
+2025-03-11 15:05:29,832 - INFO - [raw sql] ()
+2025-03-11 15:05:29,834 - INFO - PRAGMA main.table_info("reviews")
+2025-03-11 15:05:29,835 - INFO - [raw sql] ()
+2025-03-11 15:05:29,837 - INFO - COMMIT
+2025-03-11 15:05:32,832 - INFO - BEGIN (implicit)
+2025-03-11 15:05:32,833 - INFO - PRAGMA main.table_info("users")
+2025-03-11 15:05:32,834 - INFO - [raw sql] ()
+2025-03-11 15:05:32,836 - INFO - PRAGMA main.table_info("categories")
+2025-03-11 15:05:32,837 - INFO - [raw sql] ()
+2025-03-11 15:05:32,838 - INFO - PRAGMA main.table_info("movies")
+2025-03-11 15:05:32,839 - INFO - [raw sql] ()
+2025-03-11 15:05:32,840 - INFO - PRAGMA main.table_info("reviews")
+2025-03-11 15:05:32,841 - INFO - [raw sql] ()
+2025-03-11 15:05:32,843 - INFO - COMMIT
+2025-03-11 15:05:36,391 - INFO - BEGIN (implicit)
+2025-03-11 15:05:36,392 - INFO - PRAGMA main.table_info("users")
+2025-03-11 15:05:36,393 - INFO - [raw sql] ()
+2025-03-11 15:05:36,394 - INFO - PRAGMA main.table_info("categories")
+2025-03-11 15:05:36,395 - INFO - [raw sql] ()
+2025-03-11 15:05:36,396 - INFO - PRAGMA main.table_info("movies")
+2025-03-11 15:05:36,397 - INFO - [raw sql] ()
+2025-03-11 15:05:36,398 - INFO - PRAGMA main.table_info("reviews")
+2025-03-11 15:05:36,401 - INFO - [raw sql] ()
+2025-03-11 15:05:36,402 - INFO - COMMIT
+2025-03-11 15:05:40,506 - INFO - BEGIN (implicit)
+2025-03-11 15:05:40,508 - INFO - PRAGMA main.table_info("users")
+2025-03-11 15:05:40,508 - INFO - [raw sql] ()
+2025-03-11 15:05:40,510 - INFO - PRAGMA main.table_info("categories")
+2025-03-11 15:05:40,510 - INFO - [raw sql] ()
+2025-03-11 15:05:40,512 - INFO - PRAGMA main.table_info("movies")
+2025-03-11 15:05:40,513 - INFO - [raw sql] ()
+2025-03-11 15:05:40,514 - INFO - PRAGMA main.table_info("reviews")
+2025-03-11 15:05:40,515 - INFO - [raw sql] ()
+2025-03-11 15:05:40,516 - INFO - COMMIT
+2025-03-11 15:05:44,240 - INFO - BEGIN (implicit)
+2025-03-11 15:05:44,241 - INFO - PRAGMA main.table_info("users")
+2025-03-11 15:05:44,242 - INFO - [raw sql] ()
+2025-03-11 15:05:44,244 - INFO - PRAGMA main.table_info("categories")
+2025-03-11 15:05:44,245 - INFO - [raw sql] ()
+2025-03-11 15:05:44,246 - INFO - PRAGMA main.table_info("movies")
+2025-03-11 15:05:44,247 - INFO - [raw sql] ()
+2025-03-11 15:05:44,247 - INFO - PRAGMA main.table_info("reviews")
+2025-03-11 15:05:44,248 - INFO - [raw sql] ()
+2025-03-11 15:05:44,249 - INFO - COMMIT
+2025-03-11 15:06:33,340 - WARNING - (trapped) error reading bcrypt version
+Traceback (most recent call last):
+  File "C:\movie-rating-system\venv\Lib\site-packages\passlib\handlers\bcrypt.py", line 620, in _load_backend_mixin
+    version = _bcrypt.__about__.__version__
+              ^^^^^^^^^^^^^^^^^
+AttributeError: module 'bcrypt' has no attribute '__about__'

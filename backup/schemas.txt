@@ -1,27 +1,43 @@
+schemas.py:
 from pydantic import BaseModel
 from typing import List, Optional
 
 # User schemas
+#class UserBase(BaseModel):
+
+class CategoryBase(BaseModel):
+    name: str
+    
+class CategoryCreate(CategoryBase):
+    pass  # No extra fields for creation
+
+class CategoryResponse(CategoryBase):
+    id: int
+
+    class Config:
+        from_attributes = True
+
 class UserCreate(BaseModel):
     username: str
     password: str
-    id: Optional[int]
+    id : Optional[int]
 
 class User(BaseModel):
     id: Optional[int]
-    username: str
 
     class Config:
         orm_mode = True
 
-# Movie schemas
+# Movie schema
 class MovieBase(BaseModel):
     title: str
     genre: str
     year: int
-    id: Optional[int]
+    id : int
+    category_id: Optional[int]
 
 class MovieCreate(MovieBase):
+    category_id: Optional[int]
     pass
 
 class Movie(MovieBase):
@@ -31,7 +47,7 @@ class Movie(MovieBase):
     class Config:
         orm_mode = True
 
-# Review schemas
+# Review schema
 class ReviewCreate(BaseModel):
     rating: int
     comment: Optional[str] = None
@@ -46,34 +62,15 @@ class Review(ReviewCreate):
 # Movie response schema (for the `/movies` endpoint)
 class MovieListResponse(BaseModel):
     movies: List[Movie]
-
+    category: CategoryResponse | None
     class Config:
         orm_mode = True
 
-# Token schemas
+# Token schema
 class Token(BaseModel):
     access_token: str
     token_type: str
 
 class TokenData(BaseModel):
     username: Optional[str] = None
-class UserBase(BaseModel):
-    id: int
-    username: str
-    is_admin: bool
-    movies: Optional[List[str]] = []
-    reviews: Optional[List[str]] = []
 
-    class Config:
-        orm_mode = True
-        
-class CategoryBase(BaseModel):
-    name: str
-
-class CategoryCreate(CategoryBase):
-    pass
-
-class CategoryOut(CategoryBase):
-    id: int
-    class Config:
-        orm_mode = True

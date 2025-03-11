@@ -1,9 +1,17 @@
+models.py:
 from sqlalchemy import Column, Integer, String, ForeignKey, Boolean
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 from database import Base, engine
-
 Base = declarative_base()
+
+class Category(Base):
+    __tablename__ = 'categories'
+    
+    id = Column(Integer, primary_key=True)
+    name = Column(String, nullable=False)
+    
+    movies = relationship("Movie", back_populates="category")
 
 # SQLAlchemy User model
 class User(Base):
@@ -12,22 +20,11 @@ class User(Base):
     username = Column(String, unique=True, index=True)
     hashed_password = Column(String)
     is_admin = Column(Boolean, default=False)
-
-    # Relationships
     movies = relationship("Movie", back_populates="user", cascade="all, delete-orphan")
+
+    # Relationship with Movies
     reviews = relationship("Review", back_populates="user")
-
-    def __str__(self):
-        return self.username
-
-class Category(Base):
-    __tablename__ = "categories"
-    id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, nullable=False, index=True)
-    movies = relationship("Movie", back_populates="category")
-
-    def __str__(self):
-        return self.name
+    
 
 # SQLAlchemy Movie model
 class Movie(Base):
@@ -40,16 +37,12 @@ class Movie(Base):
     # Foreign Key linking to User
     user_id = Column(Integer, ForeignKey("users.id"), nullable=True)
     user = relationship("User", back_populates="movies")
+    category_id = Column(Integer, ForeignKey("categories.id"))
+    category = relationship("Category", back_populates="movies")
     # One-to-many relationship with Review
     reviews = relationship("Review", back_populates="movie")
     
-    category_id = Column(Integer, ForeignKey("categories.id"))
-    category = relationship("Category", back_populates="movies")
-    
-    def __str__(self):
-        return self.title
 
-    
 # SQLAlchemy Review model
 class Review(Base):
     __tablename__ = "reviews"
@@ -57,14 +50,12 @@ class Review(Base):
     rating = Column(Integer)
     comment = Column(String)
 
-    # Foreign Keys to Movie and User
+    # Foreign key to Movie
     movie_id = Column(Integer, ForeignKey("movies.id"))
-    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
-    # Relationships
-    user = relationship("User", back_populates="reviews")
-    movie = relationship("Movie", back_populates="reviews")
+    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)  # Make sure this exists!
 
-    def __str__(self):
-        return f"{self.rating}/10 - {self.comment}" if self.comment else "No Comment"
-    
+    # Relationship to Movie
+    movie = relationship("Movie", back_populates="reviews")
+    user = relationship("User", back_populates="reviews")  # Make sure this relationship exists!
+
 Base.metadata.create_all(engine)
